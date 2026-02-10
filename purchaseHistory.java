@@ -9,7 +9,18 @@ public class purchaseHistory {
 
     public void makePurchase(student studentIn, int monthIN, int dayIN){
         studentIn.makePurchaseStudent();
-        //history.add(new purchase(studentIn, monthIN, dayIN)); FIX TS
+        boolean isUsed = false;
+        for(int i = 0; i < history.size(); i++){
+            if((history.get(i).get(0).getMonth() == monthIN) && (history.get(i).get(0).getDay() == dayIN)){
+                history.get(i).add(new purchase(studentIn, monthIN, dayIN));
+                isUsed = true;
+            }
+        }
+        if(!isUsed){
+            int a = history.size();
+            history.add(new ArrayList<purchase>());
+            history.get(a).add(new purchase(studentIn, monthIN, dayIN));
+        }
     }
 
     public void printPurchases(int monthIN, int dayIN){
