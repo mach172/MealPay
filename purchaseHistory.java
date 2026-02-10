@@ -23,7 +23,7 @@ public class PurchaseHistory {
         }
     }
 
-    public void printPurchases(int monthIN, int dayIN){
+    public void printPurchasesDay(int monthIN, int dayIN){
         System.out.println("Purchases on " + monthIN + "/" + dayIN + ":");
         for(ArrayList<Purchase> b : history){
             for(Purchase a : b){
