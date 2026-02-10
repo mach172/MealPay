@@ -1,9 +1,9 @@
-public class purchase {
-    private student purchaser;
+public class Purchase {
+    private Student purchaser;
     private int month;
     private int day;
 
-    public purchase(student studentIn, int monthIn, int dayIn){
+    public Purchase(Student studentIn, int monthIn, int dayIn){
         purchaser = studentIn;
         month = monthIn;
         day = dayIn;
@@ -17,7 +17,7 @@ public class purchase {
         return day;
     }
 
-    public student getStudent(){
+    public Student getStudent(){
         return purchaser;
     }
 }

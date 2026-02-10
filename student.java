@@ -1,10 +1,10 @@
-public class student {
+public class Student {
     private String name;
     private double balance;
     private int id;
     private static int idGen = 1;
 
-    public student(String nameIn){
+    public Student(String nameIn){
         name = nameIn;
         balance = 0;
         id = idGen;
