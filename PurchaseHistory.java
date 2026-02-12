@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+/*
 public class PurchaseHistory {
     private ArrayList<ArrayList<Purchase>> history;
 
@@ -45,3 +45,4 @@ public class PurchaseHistory {
         }
     }
 }
+*/
