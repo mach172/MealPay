@@ -99,6 +99,13 @@ public class PayMeal {
                     System.out.println("Error: student not found\n");
                 }
             }
+            else if(choice == 4){
+                System.out.println("Printing all students... \n");
+                for(Student a : studentList){
+                    System.out.println(a.toString());
+                }
+                System.out.println();
+            }
         }
     }
 }
