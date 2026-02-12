@@ -5,7 +5,7 @@ public class Student {
     private double balance;
     private int id;
     private static int idGen = 1;
-    private static ArrayList<Purchase> purchaseHistory;
+    private ArrayList<Purchase> purchaseHistory;
 
     public Student(String nameIn){
         name = nameIn;
