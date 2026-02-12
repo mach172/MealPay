@@ -5,14 +5,14 @@ public class Student {
     private double balance;
     private int id;
     private static int idGen = 1;
-    private static ArrayList<Student> studentList = new ArrayList<Student>();
+    private static ArrayList<Purchase> purchaseHistory;
 
     public Student(String nameIn){
         name = nameIn;
         balance = 0;
         id = idGen;
         idGen++;
-        studentList.add(this);
+        purchaseHistory = new ArrayList<Purchase>();
     }
 
     public String toString(){
@@ -39,17 +39,19 @@ public class Student {
         return balance;
     }
 
-    public static void printStudentList(){
-        for(Student a : studentList){
-            System.out.println(a.toString());
-        }
+    public ArrayList<Purchase> getPurchaseHistory(){
+        return purchaseHistory;
     }
 
-    public static void printNegativeStudents(){
-        for(Student a : studentList){
-            if(a.getBalance() < 0){
+    public void printPurchaseHistoryDay(int monthIn, int dayIn){
+        for(Purchase a : purchaseHistory){
+            if((a.getDay() == dayIn) && (a.getMonth() == monthIn)){
                 System.out.println(a.toString());
             }
         }
+    }
+
+    public void addPurchase(Student student, int month, int day){
+        purchaseHistory.add(new Purchase(student, month, day));
     }
 }
