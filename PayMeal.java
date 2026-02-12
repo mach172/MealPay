@@ -106,6 +106,15 @@ public class PayMeal {
                 }
                 System.out.println();
             }
+            else if(choice == 5){
+                System.out.println("Printing all students with a negative balance... \n");
+                for(Student a : studentList){
+                    if(a.getBalance() < 0){
+                        System.out.println(a.toString());
+                    }
+                }
+                System.out.println();
+            }
         }
     }
 }
