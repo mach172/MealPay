@@ -34,6 +34,7 @@ public class PayMeal {
             System.out.println("5: Print students with a negative balance");
             System.out.println("6: Print student's purchase history");
             System.out.println("7: Print purchase history on date");
+            System.out.println("8: End program");
 
             int choice = input.nextInt();
             input.nextLine();
@@ -152,6 +153,10 @@ public class PayMeal {
                     }
                 }
                 System.out.println();
+            }
+            else if(choice == 8){
+                System.out.println("Ending program...");
+                break;
             }
         }
     }
