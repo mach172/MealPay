@@ -20,4 +20,8 @@ public class Purchase {
     public Student getStudent(){
         return purchaser;
     }
+
+    public String toString(){
+        return ("Date: " + month + "/" + day + "; Name: " + purchaser.getName() + "; ID: " + purchaser.getID());
+    }
 }
