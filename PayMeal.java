@@ -32,7 +32,8 @@ public class PayMeal {
             System.out.println("3: Make a purchase");
             System.out.println("4: Print all students");
             System.out.println("5: Print students with a negative balance");
-            //TODO: purchase histories
+            System.out.println("6: Print student's purchase history");
+            System.out.println("7: Print purchase history on date");
 
             int choice = input.nextInt();
             input.nextLine();
@@ -111,6 +112,43 @@ public class PayMeal {
                 for(Student a : studentList){
                     if(a.getBalance() < 0){
                         System.out.println(a.toString());
+                    }
+                }
+                System.out.println();
+            }
+            else if(choice == 6){
+                System.out.println("Printing student's purchase history... \n");
+                System.out.println("Please enter student's ID number:");
+                int tempID = input.nextInt();
+                boolean isFound = false;
+                for(Student a : studentList){
+                    if(a.getID() == tempID){
+                        System.out.println("\nStudent:");
+                        System.out.println(a.toString() + "\n");
+                        System.out.println("Purchases:");
+                        for(Purchase b : a.getPurchaseHistory()){
+                            System.out.println(b.toString());
+                        }
+                        isFound = true;
+                    }
+                }
+                if(!isFound){
+                    System.out.println("Error: student not found");
+                }
+                System.out.println();
+            }
+            else if(choice == 7){
+                System.out.println("Pringing purchase history on a day... \n");
+                System.out.println("Please enter month:");
+                int tempMonth = input.nextInt();
+                System.out.println("Please enter day: ");
+                int tempDay = input.nextInt();
+                System.out.println("\nPurchases:");
+                for(Student a : studentList){
+                    for(Purchase b : a.getPurchaseHistory()){
+                        if((b.getMonth() == tempMonth) && (b.getDay() == tempDay)){
+                            System.out.println(b.toString());
+                        }
                     }
                 }
                 System.out.println();
