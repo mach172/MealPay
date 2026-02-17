@@ -30,11 +30,12 @@ public class PayMeal {
             System.out.println("1: Add new student");
             System.out.println("2: Add funds to existing student's balance");
             System.out.println("3: Make a purchase");
-            System.out.println("4: Print all students");
-            System.out.println("5: Print students with a negative balance");
-            System.out.println("6: Print student's purchase history");
-            System.out.println("7: Print purchase history on date");
-            System.out.println("8: End program");
+            System.out.println("4: Print student");
+            System.out.println("5: Print all students");
+            System.out.println("6: Print students with a negative balance");
+            System.out.println("7: Print student's purchase history");
+            System.out.println("8: Print purchase history on date");
+            System.out.println("9: End program");
 
             int choice = input.nextInt();
             input.nextLine();
@@ -102,13 +103,30 @@ public class PayMeal {
                 }
             }
             else if(choice == 4){
+                System.out.println("Printing student...\n");
+                System.out.println("Please enter student's ID number: ");
+                int idNumber = input.nextInt();
+                boolean isFound = false;
+                for(Student a : studentList){
+                    if(a.getID() == idNumber){
+                        System.out.println("\nStudent:");
+                        System.out.println(a.toString() + "\n");
+                        isFound = true;
+                    }
+                }
+                if(!isFound){
+                    System.out.println("\nError: student not found");
+                }
+                System.out.println();
+            }
+            else if(choice == 5){
                 System.out.println("Printing all students... \n");
                 for(Student a : studentList){
                     System.out.println(a.toString());
                 }
                 System.out.println();
             }
-            else if(choice == 5){
+            else if(choice == 6){
                 System.out.println("Printing all students with a negative balance... \n");
                 for(Student a : studentList){
                     if(a.getBalance() < 0){
@@ -117,7 +135,7 @@ public class PayMeal {
                 }
                 System.out.println();
             }
-            else if(choice == 6){
+            else if(choice == 7){
                 System.out.println("Printing student's purchase history... \n");
                 System.out.println("Please enter student's ID number:");
                 int tempID = input.nextInt();
@@ -138,7 +156,7 @@ public class PayMeal {
                 }
                 System.out.println();
             }
-            else if(choice == 7){
+            else if(choice == 8){
                 System.out.println("Pringing purchase history on a day... \n");
                 System.out.println("Please enter month:");
                 int tempMonth = input.nextInt();
@@ -154,7 +172,7 @@ public class PayMeal {
                 }
                 System.out.println();
             }
-            else if(choice == 8){
+            else if(choice == 9){
                 System.out.println("Ending program...");
                 break;
             }
