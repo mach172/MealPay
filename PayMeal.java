@@ -159,5 +159,7 @@ public class PayMeal {
                 break;
             }
         }
+
+        input.close();
     }
 }
